@@ -7,7 +7,6 @@
         <tr>
           <th>#</th>
           <th>Title</th>
-          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -16,47 +15,8 @@
           <td>
             <a [href]="question.link" target="_blank">{{ question.title }}</a>
           </td>
-          <td>
-            <button
-              class="btn btn-danger"
-              (click)="deleteQuestion(question._id)"
-            >
-              Delete
-            </button>
-          </td>
         </tr>
       </tbody>
     </table>
-  </div>
-
-  <div class="container my-4">
-    <div class="alert alert-danger" *ngIf="formError">
-      {{ formError }}
-    </div>
-    <form (submit)="addQuestion()" class="px-4">
-      <div class="form-group">
-        <label for="title">Title:</label>
-        <input
-          type="text"
-          [(ngModel)]="newQuestion.title"
-          name="title"
-          id="title"
-          class="form-control"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="link">Link:</label>
-        <input
-          type="text"
-          [(ngModel)]="newQuestion.link"
-          name="link"
-          id="link"
-          class="form-control"
-          required
-        />
-      </div>
-      <button type="submit" class="btn btn-primary">Add Question</button>
-    </form>
   </div>
 </div>
