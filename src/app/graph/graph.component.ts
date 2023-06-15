@@ -25,7 +25,7 @@ export class GraphComponent implements OnInit {
 
   loadQuestions() {
     
-    this.http.get<any[]>('http://localhost:5000/api/graph').subscribe(
+    this.http.get<any[]>('https://dsa-questions.onrender.com/api/graph').subscribe(
       (data) => {
         // console.log(data);
         this.questions = data;
@@ -39,7 +39,7 @@ export class GraphComponent implements OnInit {
   addQuestion() {
     // Clear previous error
     this.formError = '';
-    this.http.post<any>('http://localhost:5000/api/graph', this.newQuestion)
+    this.http.post<any>('https://dsa-questions.onrender.com/api/graph', this.newQuestion)
       .subscribe(
         (response) => {
           console.log('Question added successfully:', response);
@@ -62,7 +62,7 @@ export class GraphComponent implements OnInit {
   }
 
   deleteQuestion(id: string) {
-    this.http.delete(`http://localhost:5000/api/graph/${id}`).subscribe(
+    this.http.delete(`https://dsa-questions.onrender.com/api/graph/${id}`).subscribe(
       () => {
         console.log('Question deleted successfully');
         this.loadQuestions();
